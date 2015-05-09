@@ -3,6 +3,24 @@ import random
 import sys
 import math
 
+#if test = 1 testing function activates
+test = 1
+
+def TESTING():
+    if(not test):
+        return
+    #put here testing code
+    print("enviar_hamming('1101')")            
+    enviar_hamming('1101')
+    print('----------------------')
+    print("recibir_hamming('1010101')")
+    recibir_hamming('1010101')
+    print('----------------------')
+    print("recibir_hamming('1010001')")
+    recibir_hamming('1010001')
+    print('----------------------')
+    
+
 ###################################################################
 ##INICIO enviar_humming
 ###################################################################
@@ -111,8 +129,7 @@ def recibir_hamming(bitStream):
         pos+=1
 
     
-    if(failure>0):
-        print(failureList)
+    print(failureList)
 
     intReturn = 0
     intPow = 0
@@ -154,12 +171,5 @@ def constructBinList2(binaryStream):
 ###################################################################
 ##TEST ZONE
 ###################################################################
-print("enviar_hamming('1101')")            
-enviar_hamming('1101')
-print('----------------------')
-print("recibir_hamming('1010101')")
-recibir_hamming('1010101')
-print('----------------------')
-print("recibir_hamming('1010001')")
-recibir_hamming('1010001')
-print('----------------------')
+
+TESTING()
