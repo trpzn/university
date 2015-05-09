@@ -40,9 +40,9 @@ def recibir_crc(frame,polynom):
     remainder = divideReminder(frame,polynom)
 
     if(len(remainder)==0):
-        return 1
-    else:
         return 0
+    else:
+        return 1
     
     
 def divideReminder(dividend,divisor):
