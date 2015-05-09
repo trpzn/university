@@ -17,7 +17,7 @@ def TESTING():
     recibir_hamming('1010101')
     print('----------------------')
     print("recibir_hamming('1010001')")
-    recibir_hamming('1010001')
+    recibir_hamming('1010100')
     print('----------------------')
     
 

@@ -12,13 +12,35 @@ def TESTING():
     if(not test):
         return
     ##put here code to test
-    cadena = '111010'
+    cadena = '1010001101'
     print(cadena)
-    polinomio = '101'
+    polinomio = '11111111'
     print(polinomio)
     resultado = enviar_crc(cadena,polinomio)
+    print(resultado)
     print('-------------------------------------')
     print(recibir_crc(resultado,polinomio))
+    print('-------------------------------------')
+
+    cadena = '10100011010111000'
+    print(cadena)
+    polinomio = '11111111'
+    print(polinomio)
+    #resultado = enviar_crc(cadena,polinomio)
+    #print(resultado)
+    print('-------------------------------------')
+    print(recibir_crc(cadena,polinomio))
+    print('-------------------------------------')
+
+    cadena = '10101011010111000'
+    print(cadena)
+    polinomio = '11111111'
+    print(polinomio)
+    #resultado = enviar_crc(cadena,polinomio)
+    #print(resultado)
+    print('-------------------------------------')
+    print(recibir_crc(cadena,polinomio))
+    print('-------------------------------------')
 
 
 #function calculate crc code of a given 'trama' with given 'polinomio'
@@ -42,6 +64,7 @@ def recibir_crc(frame,polynom):
     if(len(remainder)==0):
         return 0
     else:
+        #print(remainder)
         return 1
     
     
@@ -57,6 +80,11 @@ def divideReminder(dividend,divisor):
             #there isn't more numbers in restDividend to down
             if(len(restDividend)<=0):
                 #not more dividables, end of divition
+                #print(currentDividend)
+                #print(int(stringToList(currentDividend,1)))
+                if(len(currentDividend)>0 and (int(stringToList(currentDividend,1))==0)):
+                    currentDividend = []
+                    #print(currentDividend)
                 dividable = False
             #there is more numbers in restDividend to down
             else:
