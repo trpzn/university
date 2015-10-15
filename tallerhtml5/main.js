@@ -52,20 +52,24 @@ function create() {
   game.world.bringToTop(carsGroup);
 }
 
-
+//to correct bug when player it's dead and car overlap.
+function inInitialposition(){
+  if(player.position.x == playerInit.x && player.position.y == playerInit.y){
+    return true;
+  }
+  return false;
+}
 
 function update() {
 
   if(playing){
-
     //check for colition
-    if(game.physics.arcade.overlap(carsGroup,player)){
+    if(game.physics.arcade.overlap(carsGroup,player) && !inInitialposition()){
       player.loadTexture("blood");
       showResetButton();
       console.log("you died");
       playing = false;
       return;
-
     }
 
     //movement
